@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuestos</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body onload="cargarApp()">
+    <div class="cabecero">
+        <div class="presupuesto">
+            <div class="presupuesto_titulo">
+                Presupuesto disponible
+            </div>
+            <div class="presupuesto_valor" id="presupuesto">+ 2,000.00</div>
+            <div class="presupuesto_ingreso limpiarEstilos">
+                <div class="presupuesto_ingreso--texto">Ingresos</div>
+                <div class="derecha">
+                    <div class="presupuesto_ingreso--valor" id="ingresos"></div>
+                    <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+                </div>
+            </div>
+            <div class="presupuesto_egreso limpiarEstilos">
+                <div class="presupuesto_egreso--texto">Egresos</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="presupuesto_egreso--valor" id="egresos"></div>
+                    <div class="presupuesto_egreso--porcentaje" id="porcentaje">45%</div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <form id="forma" onsubmit="return false;">
+        <div class="agregar">
+            <div class="agregar_contenedor">
+                <p class="p-holder">Especifica una descripción del ingreso o egreso que desea agregar y su monto.</p>
+                <select class="agregar_tipo" id="tipo">
+                    <option value="ingreso" selected> + </option>
+                    <option value="egreso"> - </option>
+                </select>
+                <input type="text" class="agregar_descripcion"
+                placeholder="Detalle" id="descripcion"/>
+                <input type="number" class="agregar_valor"
+                placeholder="Valor" id="valor" step="any"/>
+                <buttom class="agregar_btn" onclick="agregarDato()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </buttom>
+                <a onclick="reiniciarApp()" class="reset-btn">Reiniciar App</a>
+            </div>
+        </div>
+    </form>
+
+    <div class="contenedor limpiarEstilos">
+        <div class="ingreso">
+            <h2 class="ingreso_titulo">Ingresos</h2>
+            <div id="lista-ingresos">
+                <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">Salario</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">2200.00</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="egreso">
+            <h2 class="egreso_titulo">Egresos</h2>
+            <div id="lista-egresos">
+                <div class="elemento limpiarEstilos">
+                    <div class="elemento_descripcion">Renta</div>
+                    <div class="derecha limpiarEstilos">
+                        <div class="elemento_valor">-500.00</div>
+                        <div class="elemento_porcentaje">21%</div>
+                        <div class="elemento_eliminar">
+                            <button class="elemento_eliminar--btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/Dato.js"></script>
+    <script src="js/Ingrego.js"></script>
+    <script src="js/Egreso.js"></script>
+    <script src="js/app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
