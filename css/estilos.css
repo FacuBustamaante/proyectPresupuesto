@@ -250,34 +250,33 @@ h2 {
     display: none;
 }
 
-.p-holder{
-    margin: 40px;
-    color: grey;
+#graficoPresupuesto {
+    width: 700px;
+    height: 350px;
+    margin: 20px auto;
+    display: block;
 }
 
-.reset-btn {
-	box-shadow: 0px 10px 14px -7px #276873;
-	background-color:#28b9b4;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:20px;
-	font-weight:bold;
-	padding:13px 32px;
-	text-decoration:none;
-	text-shadow:1px 0px 8px #3d768a;
-}
-.reset-btn:hover {
-	background-color:#408c99;
-}
-.reset-btn:active {
-	position:relative;
-	top:1px;
+
+
+.boton-excel {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-     
+.boton-pdf {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 
 .elemento_eliminar--btn:focus { outline: none; }
 .elemento_eliminar--btn:active { transform: translateY(2px); }
