@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body onload="cargarApp()">
+    <button onclick="exportarAExcel()" class="boton-excel">Exportar a Excel</button>
+    <button onclick="exportarAPDF()" class="boton-pdf">Exportar a PDF</button>
+
+    
     <div class="cabecero">
+        
         <div class="presupuesto">
             <div class="presupuesto_titulo">
                 Presupuesto disponible
@@ -33,24 +38,26 @@
     <form id="forma" onsubmit="return false;">
         <div class="agregar">
             <div class="agregar_contenedor">
-                <p class="p-holder">Especifica una descripción del ingreso o egreso que desea agregar y su monto.</p>
                 <select class="agregar_tipo" id="tipo">
-                    <option value="ingreso" selected> + </option>
-                    <option value="egreso"> - </option>
+                    <option value="ingreso" selected>+</option>
+                    <option value="egreso">-</option>
                 </select>
                 <input type="text" class="agregar_descripcion"
-                placeholder="Detalle" id="descripcion"/>
+                placeholder="Agregar Descripción" id="descripcion"/>
                 <input type="number" class="agregar_valor"
                 placeholder="Valor" id="valor" step="any"/>
                 <buttom class="agregar_btn" onclick="agregarDato()">
                     <ion-icon name="checkmark-circle-outline"></ion-icon>
                 </buttom>
-                <a onclick="reiniciarApp()" class="reset-btn">Reiniciar App</a>
             </div>
         </div>
     </form>
 
     <div class="contenedor limpiarEstilos">
+        <div class="contenedor" style="margin-top: 40px;">
+            <canvas id="graficoPresupuesto" width="400" height="200"></canvas>
+        </div>
+        
         <div class="ingreso">
             <h2 class="ingreso_titulo">Ingresos</h2>
             <div id="lista-ingresos">
@@ -86,6 +93,14 @@
         </div>
     </div>
 
+    
+    <!--nacho-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <!--nacho-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/Dato.js"></script>
     <script src="js/Ingrego.js"></script>
     <script src="js/Egreso.js"></script>
