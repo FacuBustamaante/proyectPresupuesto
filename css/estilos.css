@@ -260,16 +260,26 @@ h2 {
 
 
 .boton-excel {
-    background-color: green;
+    background-color: #28B9B5;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.boton-excel:hover {
+    background-color: #1a7f7b;
+    transition-duration: 500ms;
+}
+
+.boton-pdf:hover {
+    background-color: #aa222d;
+    transition-duration: 500ms;
 }
 
 .boton-pdf {
-    background-color: red;
+    background-color: #FF5049;
     color: white;
     padding: 10px;
     border: none;
@@ -277,6 +287,43 @@ h2 {
     cursor: pointer;
 }
 
+.reset-btn {
+    text-transform: uppercase;
+    background-color: #28B9B5;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.reset-btn:hover {
+    background-color: #1a7f7b;
+    transition-duration: 500ms;
+}
+
+.xport-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.xport-container button {
+    margin: 0 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.xport-container button:hover {
+    transition-duration: 300ms;
+}
 
 .elemento_eliminar--btn:focus { outline: none; }
 .elemento_eliminar--btn:active { transform: translateY(2px); }

@@ -1,12 +1,8 @@
 //Valores de ingreso y egreso iniciales a modo de ejemplo.
 const ingresos = [
-    new Ingreso('Sueldo', 5800.00),
-    new Ingreso('sueldo 2', 9000.00)
 ];
 
 const egresos = [
-    new Egreso('Supermercado', 250.00),
-    new Egreso('Auto Shop', 1500.00)   
 ]
 
 let cargarApp = () =>{
@@ -30,6 +26,17 @@ let totalEgresos = () =>{
         totalEgreso += egreso.valor
     }
     return totalEgreso;
+}
+
+//Reiniciar presupuesto
+let resetPresupuesto = () => {
+    if (!confirm("¿Estás seguro de que quieres reiniciar el presupuesto? Esta acción no se puede deshacer.")) {
+        return; 
+    }
+    ingresos.length = 0;
+    egresos.length = 0;
+    cargarApp();
+    actualizarGrafico();
 }
 
 //Actualiza los valores del cabecero cada vez que se hace un cambio
